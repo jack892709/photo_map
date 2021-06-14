@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Photo Map</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Forget where you took the photos? Photo Map is the tool to show the locations of those memorable images">
+    <meta property="og:title" content="Photo Map">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Photo Map">
+    <meta property="og:description" content="Forget where you took the photos? Photo Map is the tool to show the locations of those memorable images">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="https://unpkg.com/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/exifr/dist/lite.umd.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header id="header">
+            <h1>Photo Map</h1>
+            <p>Find out locations of memorable images</p>
+        </header>
+        <section class="container">
+            <!-- <img src="" alt="" id="testimage"> -->
+            <div class="dragndrop-box">
+                <div class="outerlayer">
+                    <div class="anotherlayer">
+                        <div class="deco-layer">
+                        </div>
+                        <div class="input-area">
+                            <form id="input-form">
+                                <!-- <label class="input-lbl"> -->
+                                    <input id="file-loader" type="file" multiple="" accept="application/pdf,.pdf,image/bmp,.bmp,image/jpeg,.jpg,.jpeg,image/png,.png,image/tiff,.tif,.tiff" style="display: none">
+                                    <div class="input-info">
+                                        <label id="input-btn">
+                                            <span class="icon"><i class="fa fa-file-image-o" aria-hidden="true"></i></span>
+                                            <!-- <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M14.0036 1.99646L17.0036 4.99646L16.999 4.99946L17 5.00001V13H16V5.99946L13 6.00001V2.99946H4V17.9995L12.0275 18.0003C12.0093 17.8361 12 17.6691 12 17.5C12 15.0147 14.0147 13 16.5 13C18.9853 13 21 15.0147 21 17.5C21 19.9853 18.9853 22 16.5 22C14.5409 22 12.8742 20.7481 12.2563 19.0007L3 19V2.00001H14L14.0036 1.99646ZM16.5 14C14.567 14 13 15.567 13 17.5C13 19.433 14.567 21 16.5 21C18.433 21 20 19.433 20 17.5C20 15.567 18.433 14 16.5 14ZM17 15V16.9995L19 17V18L17 17.9995V20H16V17.9995L14 18V17L16 16.9995V15H17ZM11 14V15H6V14H11ZM14 11V12H6V11H14ZM14 8.00001V9.00001H6V8.00001H14ZM14 3.40746V4.99946H15.592L14 3.40746Z"></path></svg> -->
+                                            <span>CHOOSE PHOTOS</span>
+                                        </label>
+                                        <p style="color:whitesmoke;">or drop photos here</p>
+                                    </div>
+                                <!-- </label> -->
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="box">
+                <div id="interactive_map"></div>
+            </div>
+
+        </section>
+        <footer>
+
+        </footer>
+    </div>
+    <script src="photo_map.js"></script>
+</body>
+</html>
